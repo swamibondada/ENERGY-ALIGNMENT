@@ -1323,7 +1323,7 @@ body {
     font-size: var(--text-4xl);
     font-weight: 700;
     margin-bottom: var(--space-4);
-    color: #ffffff;
+    color: #000000;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
