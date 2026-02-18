@@ -1323,7 +1323,8 @@ body {
     font-size: var(--text-4xl);
     font-weight: 700;
     margin-bottom: var(--space-4);
-    color: var(--text-primary);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .blueprint-subtitle {
@@ -1467,7 +1468,7 @@ body {
 
 .ring-bg {
     fill: none;
-    stroke: hsla(255, 255%, 255%, 0.1);
+    stroke: hsla(0, 0%, 100%, 0.08);
     stroke-width: 8;
 }
 
@@ -1479,7 +1480,6 @@ body {
     stroke-dasharray: 283;
     stroke-dashoffset: calc(283 - (283 * var(--ring-percent) / 100));
     transition: stroke-dashoffset 1.5s ease-out;
-    filter: drop-shadow(0 0 10px var(--ring-color));
 }
 
 /* Quick Snapshot */
@@ -1618,14 +1618,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 320px;
+    padding: var(--space-4);
 }
 
 .radar-chart canvas {
     width: 100% !important;
     height: 100% !important;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 /* Dimension Bars (Vertical) */

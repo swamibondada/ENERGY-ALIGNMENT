@@ -728,10 +728,20 @@ function initRadarChart(dimensionScores) {
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
 
+    // Set explicit canvas size for crisp rendering
+    const size = 400;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = size * dpr;
+    canvas.height = size * dpr;
+    canvas.style.width = size + 'px';
+    canvas.style.height = size + 'px';
+
     const ctx = canvas.getContext('2d');
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const radius = Math.min(centerX, centerY) - 30;
+    ctx.scale(dpr, dpr);
+
+    const centerX = size / 2;
+    const centerY = size / 2;
+    const radius = (size / 2) - 50;
     const labels = dimensionScores.map(d => d.name);
     const values = dimensionScores.map(d => d.score);
     const numPoints = values.length;
@@ -792,13 +802,13 @@ function initRadarChart(dimensionScores) {
         const y = centerY + Math.sin(angle) * distance;
 
         ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
         ctx.fill();
     });
 
     // Draw labels
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.font = '14px Inter, sans-serif';
     ctx.textAlign = 'center';
 
     labels.forEach((label, i) => {
