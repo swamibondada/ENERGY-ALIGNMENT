@@ -1191,10 +1191,14 @@ body {
 
 .oto-benefits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-5);
     margin-bottom: var(--space-10);
     text-align: left;
+}
+
+.oto-benefit:last-child:nth-child(3n+1) {
+    grid-column: 2;
 }
 
 .oto-benefit {
@@ -1231,7 +1235,7 @@ body {
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: var(--bg-dark);
+    color: #ffffff;
     background: var(--accent-400);
     border: none;
     border-radius: var(--radius-full);
