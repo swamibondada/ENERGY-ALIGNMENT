@@ -3,56 +3,61 @@
    Redesigned for calm, mature, mobile-first UX
    ======================================== */
 
-/* CSS Variables - Softer, Calmer Palette */
 :root {
-    /* Colors - Soft Sage/Teal with Warm Gold Accents */
-    --primary-hue: 165;
-    --accent-hue: 38;
+    /* --- Core Design System: Charcoal Slate --- */
 
-    --primary-50: hsl(165, 30%, 97%);
-    --primary-100: hsl(165, 35%, 90%);
-    --primary-200: hsl(165, 40%, 80%);
-    --primary-300: hsl(165, 45%, 65%);
-    --primary-400: hsl(165, 50%, 50%);
-    --primary-500: hsl(165, 55%, 42%);
-    --primary-600: hsl(165, 55%, 35%);
-    --primary-700: hsl(165, 50%, 28%);
-    --primary-800: hsl(165, 45%, 20%);
-    --primary-900: hsl(165, 40%, 12%);
+    /* Backgrounds */
+    --bg-dark: #0f1717;
+    /* Primary App Background */
+    --bg-card: #151e1e;
+    /* Section/Card Background */
+    --bg-input: #1a2525;
+    /* Input Field Background */
 
-    --accent-50: hsl(38, 50%, 96%);
-    --accent-100: hsl(38, 55%, 88%);
-    --accent-200: hsl(38, 60%, 78%);
-    --accent-300: hsl(38, 65%, 65%);
-    --accent-400: hsl(38, 70%, 55%);
-    --accent-500: hsl(38, 75%, 48%);
+    /* Accents - Mint to Gold */
+    --accent-mint: #76e1c4;
+    --accent-gold: #f0c27b;
+    --accent-mint-dim: rgba(118, 225, 196, 0.2);
+    --accent-gold-dim: rgba(240, 194, 123, 0.2);
 
-    --success: hsl(155, 55%, 42%);
-    --warning: hsl(38, 75%, 50%);
-    --error: hsl(0, 55%, 55%);
+    /* Text Palette */
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
 
-    /* Dark Theme Colors - Deep Navy */
-    --bg-glass: hsla(230, 20%, 15%, 0.7);
-    --bg-card-light: hsl(220, 15%, 18%);
+    /* Borders & Lines */
+    --border-subtle: rgba(118, 225, 196, 0.08);
+    --border-accent: rgba(118, 225, 196, 0.3);
 
-    --text-primary: hsl(0, 0%, 98%);
-    --text-secondary: hsl(220, 10%, 72%);
-    --text-muted: hsl(220, 8%, 52%);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--accent-mint), var(--accent-gold));
+    --gradient-glow: linear-gradient(135deg, var(--accent-mint-dim), var(--accent-gold-dim));
 
-    --border-subtle: hsla(200, 20%, 35%, 0.25);
-    --border-accent: hsla(165, 50%, 50%, 0.4);
+    /* Shadows */
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 30px rgba(118, 225, 196, 0.15);
 
-    /* Gradients - Softer */
-    --gradient-primary: linear-gradient(135deg, var(--primary-400), var(--primary-600));
-    --gradient-accent: linear-gradient(135deg, var(--accent-300), var(--accent-500));
-    --gradient-glow: linear-gradient(135deg, var(--primary-400), var(--accent-400));
-    --gradient-radial: radial-gradient(ellipse at center, hsl(200, 15%, 12%), var(--bg-dark));
+    /* Spacing Scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+
+    /* Border Radius */
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
 
     /* Typography */
     --font-display: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1.125rem;
     --text-lg: 1.25rem;
@@ -60,42 +65,10 @@
     --text-2xl: 1.75rem;
     --text-3xl: 2.25rem;
     --text-4xl: 2.75rem;
-    --text-5xl: 3.5rem;
 
-    /* Darker Slate Design System */
-    --bg-dark: #0f1717;
-    --bg-card: #151e1e;
-    --bg-input: rgba(15, 23, 23, 0.8);
-
-    /* Elegant Accent Palette - Mint to Gold */
-    --accent-primary: #76e1c4;
-    /* Mint/Teal */
-    --accent-secondary: #f0c27b;
-    /* Gold */
-    --accent-400: #76e1c4;
-    --accent-600: #57bfa5;
-
-    /* Text */
-    --text-primary: #f8fafc;
-    --text-secondary: #e2e8f0;
-    --text-muted: #94a3b8;
-
-    /* Design Tokens */
-    --gradient-primary: linear-gradient(135deg, #76e1c4, #f0c27b);
-    --gradient-secondary: linear-gradient(135deg, #151e1e, #0f1717);
-    --gradient-glow: linear-gradient(135deg, rgba(118, 225, 196, 0.2), rgba(240, 194, 123, 0.2));
-
-    --border-subtle: rgba(118, 225, 196, 0.1);
-    --border-accent: rgba(118, 225, 196, 0.3);
-
-    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 20px rgba(118, 225, 196, 0.15);
-    --shadow-glow-accent: 0 0 50px hsla(38, 70%, 50%, 0.25);
-
-    /* Transitions - Smooth */
+    /* Transitions */
     --transition-fast: 150ms ease-out;
     --transition-base: 300ms ease-out;
-    --transition-slow: 500ms ease-out;
 }
 
 /* Reset & Base */
@@ -250,9 +223,9 @@ body {
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-1) var(--space-4);
-    background: rgba(118, 225, 196, 0.1);
-    color: var(--accent-primary);
-    border: 1px solid rgba(118, 225, 196, 0.2);
+    background: var(--accent-mint-dim);
+    color: var(--accent-mint);
+    border: 1px solid var(--border-accent);
     border-radius: var(--radius-full);
     font-size: var(--text-xs);
     font-weight: 600;
@@ -291,7 +264,7 @@ body {
 }
 
 .welcome-description strong {
-    color: var(--accent-300);
+    color: var(--accent-gold);
 }
 
 .quiz-info {
@@ -321,7 +294,7 @@ body {
 }
 
 .coach-name .highlight {
-    color: var(--accent-400);
+    color: var(--accent-mint);
     font-weight: 600;
 }
 
@@ -381,7 +354,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(118, 225, 196, 0.4);
+    box-shadow: 0 8px 25px rgba(118, 225, 196, 0.3);
 }
 
 .btn-primary:active {
@@ -520,8 +493,8 @@ body {
     gap: var(--space-2);
     margin-bottom: var(--space-6);
     padding: var(--space-2) var(--space-6);
-    background: #1a2525;
-    border: 1px solid rgba(118, 225, 196, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-full);
     width: fit-content;
     margin-left: auto;
@@ -540,12 +513,12 @@ body {
 
 /* Question Card */
 .question-card {
-    background: #151e1e;
-    border: 1px solid rgba(118, 225, 196, 0.05);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-12) var(--space-10);
     transition: all var(--transition-base);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-soft);
 }
 
 .question-text {
@@ -559,7 +532,7 @@ body {
 
 .question-number {
     display: inline-block;
-    color: var(--accent-primary);
+    color: var(--accent-mint);
     font-weight: 700;
     margin-right: var(--space-2);
 }
@@ -567,12 +540,12 @@ body {
 /* Text Input */
 .text-input {
     width: 100%;
-    padding: var(--space-4) var(--space-5);
+    padding: var(--space-4) var(--space-6);
     font-family: var(--font-body);
     font-size: var(--text-xl);
     color: var(--text-primary);
-    background: rgba(15, 23, 23, 0.5);
-    border: 2px solid var(--accent-primary);
+    background: var(--bg-input);
+    border: 2px solid var(--accent-mint);
     border-radius: var(--radius-xl);
     transition: all var(--transition-base);
     text-align: center;
@@ -580,8 +553,8 @@ body {
 
 .text-input:focus {
     outline: none;
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 15px rgba(118, 225, 196, 0.3);
+    border-color: var(--accent-mint);
+    box-shadow: 0 0 15px rgba(118, 225, 196, 0.2);
 }
 
 .text-input::placeholder {
@@ -599,9 +572,9 @@ body {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-4) var(--space-5);
-    background: #1a2525;
-    border: 2px solid rgba(118, 225, 196, 0.1);
+    padding: var(--space-4) var(--space-6);
+    background: var(--bg-input);
+    border: 2px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     cursor: pointer;
     transition: all var(--transition-base);
@@ -609,13 +582,13 @@ body {
 
 .option-label:hover {
     background: rgba(118, 225, 196, 0.05);
-    border-color: rgba(118, 225, 196, 0.4);
+    border-color: var(--border-accent);
     transform: translateX(4px);
 }
 
 .option-label.selected {
     background: rgba(118, 225, 196, 0.1);
-    border-color: var(--accent-primary);
+    border-color: var(--accent-mint);
 }
 
 .option-radio {
@@ -623,11 +596,11 @@ body {
 }
 
 .option-indicator {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    border: 2.5px solid rgba(118, 225, 196, 0.3);
-    background: #0f1717;
+    border: 2px solid var(--border-accent);
+    background: var(--bg-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -636,15 +609,13 @@ body {
 }
 
 .option-label:hover .option-indicator {
-    border-color: var(--accent-primary);
+    border-color: var(--accent-mint);
 }
 
 .option-label.selected .option-indicator {
-    border-color: var(--accent-primary);
-    background: var(--accent-primary);
-    box-shadow:
-        0 0 20px hsla(145, 55%, 45%, 0.4),
-        inset 0 2px 4px hsla(0, 0%, 100%, 0.3);
+    border-color: var(--accent-mint);
+    background: var(--accent-mint);
+    box-shadow: 0 0 15px rgba(118, 225, 196, 0.3);
 }
 
 .option-indicator::after {
@@ -1381,13 +1352,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
-    background: #1a2525;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(118, 225, 196, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-12);
     margin-bottom: var(--space-12);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-soft);
 }
 
 .score-left {
@@ -1472,7 +1442,7 @@ body {
 
 .ring-fill {
     fill: none;
-    stroke: var(--accent-primary);
+    stroke: var(--accent-mint);
     stroke-width: 8;
     stroke-linecap: round;
     stroke-dasharray: 283;
@@ -1482,12 +1452,12 @@ body {
 
 /* Quick Snapshot */
 .snapshot-section {
-    background: hsla(220, 15%, 18%, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid hsla(220, 20%, 30%, 0.4);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-10);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-8);
+    box-shadow: var(--shadow-soft);
 }
 
 .snapshot-title {
@@ -1517,8 +1487,8 @@ body {
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
-    background: hsl(230, 18%, 12%);
-    border: 1px solid hsla(220, 20%, 35%, 0.5);
+    background: var(--bg-input);
+    border: 1px solid var(--border-subtle);
 }
 
 .tag-depleted {
@@ -1589,11 +1559,11 @@ body {
 }
 
 .dimension-card {
-    background: hsla(220, 15%, 18%, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid hsla(220, 20%, 30%, 0.4);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
+    box-shadow: var(--shadow-soft);
 }
 
 .card-title {
@@ -1682,12 +1652,11 @@ body {
 
 /* Leaks Section */
 .leaks-section {
-    background: hsla(230, 18%, 15%, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-8);
 }
 
 .leaks-text {
@@ -1702,12 +1671,12 @@ body {
 
 /* Pattern Section */
 .pattern-section {
-    background: hsla(230, 18%, 15%, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-10);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-8);
+    box-shadow: var(--shadow-soft);
 }
 
 .pattern-title {
@@ -1752,12 +1721,11 @@ body {
 
 /* Root Section */
 .root-section {
-    background: hsla(230, 18%, 15%, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-8);
 }
 
 .root-title {
@@ -1775,12 +1743,12 @@ body {
 
 /* 7-Day Reset Section */
 .reset-section {
-    background: hsla(230, 18%, 15%, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-10);
     margin-bottom: var(--space-12);
+    box-shadow: var(--shadow-soft);
 }
 
 .reset-title {
@@ -1870,28 +1838,29 @@ body {
 
 /* Note from Ritu Section */
 .note-from-ritu {
-    background: linear-gradient(135deg, hsl(280, 40%, 20%), hsl(260, 35%, 18%));
-    border: 1px solid hsla(280, 50%, 40%, 0.3);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
     margin-bottom: var(--space-8);
     display: flex;
     gap: var(--space-6);
     align-items: flex-start;
+    box-shadow: var(--shadow-soft);
 }
 
 .ritu-avatar {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, hsl(280, 50%, 60%), hsl(320, 50%, 60%));
+    background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-display);
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: white;
+    color: #0f1717;
     flex-shrink: 0;
 }
 
@@ -1922,7 +1891,7 @@ body {
     font-family: 'Georgia', serif;
     font-style: italic;
     font-size: var(--text-base);
-    color: hsl(320, 60%, 70%);
+    color: var(--accent-gold);
 }
 
 /* Disclaimer */
@@ -1938,7 +1907,17 @@ body {
 /* ========================================
    Responsive Design - Mobile First
    ======================================== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    #welcome-screen .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-8);
+    }
+
+    .welcome-content {
+        align-items: center;
+    }
+
     .score-section {
         grid-template-columns: 1fr;
         gap: var(--space-8);
@@ -1951,28 +1930,6 @@ body {
 
     .dimensions-grid-section {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 1024px) {
-    #welcome-screen .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: var(--space-8);
-    }
-
-    .welcome-content {
-        align-items: center;
-    }
-
-    .welcome-visual {
-        height: 250px;
-        order: -1;
-    }
-
-    .energy-orb {
-        width: 200px;
-        height: 200px;
     }
 }
 
