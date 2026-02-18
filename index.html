@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover your Energy Alignment Score with Ritu's personalized quiz. Unlock insights about your manifestation potential and energy patterns.">
+    <title>Energy Alignment Quiz – Ritu (Manifestation & Energy Coach)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <div class="container welcome-container">
+                <header class="branding-top">
+                    <div class="brand-logo-text">
+                        <span class="logo-icon">👑</span>
+                        <span class="logo-name">Energy Queens</span>
+                    </div>
+                    <div class="ritu-img-wrapper">
+                        <div class="ritu-avatar-welcome">R</div>
+                    </div>
+                </header>
+                <div class="welcome-content">
+                    <div class="brand-badge">
+                        <span>Manifestation & Energy Coach</span>
+                    </div>
+                    <h1 class="welcome-title">
+                        <span class="gradient-text">Energy Alignment</span>
+                        <span class="subtitle">Quiz</span>
+                    </h1>
+                    <p class="welcome-description">
+                        Discover your unique energy blueprint and unlock personalized insights for your journey.
+                        This comprehensive assessment will reveal your <strong>Energy Alignment Score</strong> and guide
+                        your transformation.
+                    </p>
+                    <div class="quiz-info">
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span>5-7 minutes</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📊</span>
+                            <span>Personalized Report</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✨</span>
+                            <span>Your Energy Phase</span>
+                        </div>
+                    </div>
+                    <button id="start-quiz" class="btn-primary">
+                        <span>Begin Your Journey</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <p class="coach-name">with <span class="highlight">Ritu</span></p>
+                </div>
+                <div class="welcome-visual">
+                    <div class="energy-orb"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-container">
+                <div class="progress-wrapper">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="progress-text" class="progress-text">Question 1 of 35</span>
+                </div>
+
+                <div id="quiz-content" class="quiz-content">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="btn-secondary" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        <span>Back</span>
+                    </button>
+                    <button id="next-btn" class="btn-primary">
+                        <span>Next</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="results-container">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="quizData.js"></script>
+    <script src="scoring.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
