@@ -750,7 +750,7 @@ function initRadarChart(dimensionScores) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Draw grid circles
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
     ctx.lineWidth = 1;
     for (let i = 1; i <= 4; i++) {
         ctx.beginPath();
@@ -807,7 +807,7 @@ function initRadarChart(dimensionScores) {
     });
 
     // Draw labels
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.fillStyle = 'rgba(30, 41, 59, 0.85)';
     ctx.font = '14px Inter, sans-serif';
     ctx.textAlign = 'center';
 
