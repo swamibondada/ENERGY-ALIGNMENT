@@ -268,8 +268,11 @@ body {
 .welcome-title {
     font-family: var(--font-display);
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    line-height: 1.15;
 }
 
 .gradient-text {
@@ -283,16 +286,17 @@ body {
 }
 
 .welcome-title .subtitle {
-    font-size: var(--text-4xl);
-    font-weight: 600;
+    font-size: var(--text-5xl);
+    font-weight: 700;
     color: var(--text-primary);
+    line-height: 1.15;
 }
 
 .welcome-description {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--text-secondary);
-    max-width: 600px;
-    line-height: 1.8;
+    max-width: 420px;
+    line-height: 1.9;
 }
 
 .welcome-description strong {
@@ -301,10 +305,10 @@ body {
 
 .quiz-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: var(--space-8);
-    margin: var(--space-4) 0;
+    gap: var(--space-6);
+    margin: var(--space-2) 0;
     width: 100%;
 }
 
@@ -2009,16 +2013,20 @@ body {
     }
 
     .gradient-text {
-        font-size: var(--text-4xl);
+        font-size: var(--text-3xl);
     }
 
     .welcome-title .subtitle {
         font-size: var(--text-3xl);
     }
 
+    .welcome-description {
+        max-width: 100%;
+    }
+
     .quiz-info {
-        flex-direction: column;
-        gap: var(--space-3);
+        justify-content: center;
+        gap: var(--space-4);
     }
 
     .question-card {
