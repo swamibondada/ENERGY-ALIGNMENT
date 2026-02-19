@@ -728,8 +728,10 @@ function initRadarChart(dimensionScores) {
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
 
-    // Set explicit canvas size for crisp rendering
-    const size = 400;
+    // Use container width for responsive sizing
+    const container = canvas.parentElement;
+    const containerWidth = container ? container.clientWidth : 500;
+    const size = Math.min(containerWidth - 32, 500);
     const dpr = window.devicePixelRatio || 1;
     canvas.width = size * dpr;
     canvas.height = size * dpr;
