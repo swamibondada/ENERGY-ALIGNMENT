@@ -616,7 +616,7 @@ function renderCompositeBar(label, value, isInverse = false) {
         <div class="composite-bar-item">
             <span class="composite-label">${label}</span>
             <div class="composite-track">
-                <div class="composite-fill" style="width: ${displayValue}%; background: ${color}"></div>
+                <div class="composite-fill" data-width="${displayValue}" style="width: 0%; background: ${color}"></div>
             </div>
             <span class="composite-value">${displayValue}</span>
         </div>
@@ -627,7 +627,7 @@ function renderDimensionBar(name, score) {
     return `
         <div class="dim-bar-item">
             <div class="dim-bar-track">
-                <div class="dim-bar-fill" data-width="${score}%"></div>
+                <div class="dim-bar-fill" data-height="${score}%"></div>
             </div>
             <span class="dim-bar-label">${name}</span>
         </div>
@@ -824,18 +824,17 @@ function initRadarChart(dimensionScores) {
 function animateBars() {
     // Animate dimension bars (vertical - use height)
     document.querySelectorAll('.dim-bar-fill').forEach(fill => {
-        const height = fill.getAttribute('data-width'); // data-width contains the percentage
+        const height = fill.getAttribute('data-height'); // data-height contains the percentage
         setTimeout(() => {
             fill.style.height = height;
         }, 100);
     });
 
-    // Animate composite bars
+    // Animate composite bars (horizontal - use width)
     document.querySelectorAll('.composite-fill').forEach(fill => {
-        const currentWidth = fill.style.width;
-        fill.style.width = '0%';
+        const targetWidth = fill.getAttribute('data-width'); // data-width contains the numeric value
         setTimeout(() => {
-            fill.style.width = currentWidth;
+            fill.style.width = targetWidth + '%';
         }, 100);
     });
 }
