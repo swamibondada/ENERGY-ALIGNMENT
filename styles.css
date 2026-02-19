@@ -65,6 +65,8 @@
     --text-2xl: 1.75rem;
     --text-3xl: 2.25rem;
     --text-4xl: 2.75rem;
+    --text-5xl: 3.25rem;
+    --text-xs: 0.75rem;
 
     /* Transitions */
     --transition-fast: 150ms ease-out;
@@ -270,9 +272,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    justify-content: center;
     flex-wrap: wrap;
     gap: var(--space-3);
     line-height: 1.15;
+    width: 100%;
 }
 
 .gradient-text {
@@ -1991,13 +1995,16 @@ body {
 
     .welcome-layout {
         grid-template-columns: 1fr;
-        padding: var(--space-8) var(--space-4);
-        gap: var(--space-6);
+        padding: var(--space-6) var(--space-4);
+        gap: var(--space-4);
+        min-height: 100vh;
+        align-content: center;
     }
 
     .welcome-left {
         align-items: center;
         text-align: center;
+        gap: var(--space-5);
     }
 
     .welcome-right {
@@ -2005,11 +2012,11 @@ body {
     }
 
     .eq-logo-img {
-        max-width: 220px;
+        max-width: 200px;
     }
 
     .eq-logo-panel {
-        padding: var(--space-3);
+        padding: var(--space-2);
     }
 
     .gradient-text {
@@ -2020,13 +2027,19 @@ body {
         font-size: var(--text-3xl);
     }
 
+    .welcome-title {
+        justify-content: center;
+        gap: var(--space-2);
+    }
+
     .welcome-description {
         max-width: 100%;
+        line-height: 1.7;
     }
 
     .quiz-info {
         justify-content: center;
-        gap: var(--space-4);
+        gap: var(--space-3) var(--space-4);
     }
 
     .question-card {
@@ -2128,16 +2141,48 @@ body {
 @media (max-width: 480px) {
 
     .welcome-layout {
-        padding: var(--space-6) var(--space-3);
+        padding: var(--space-4) var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .welcome-left {
         gap: var(--space-4);
     }
 
     .eq-logo-img {
-        max-width: 180px;
+        max-width: 160px;
+    }
+
+    .gradient-text {
+        font-size: var(--text-2xl);
+    }
+
+    .welcome-title .subtitle {
+        font-size: var(--text-2xl);
+    }
+
+    .welcome-title {
+        gap: var(--space-2);
     }
 
     .welcome-description {
-        font-size: var(--text-base);
+        font-size: var(--text-sm);
+        line-height: 1.7;
+    }
+
+    .quiz-info {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    .brand-badge {
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-3);
+    }
+
+    .coach-name {
+        font-size: var(--text-xs);
     }
 
     .quiz-container,
