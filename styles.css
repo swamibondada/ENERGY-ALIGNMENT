@@ -42,6 +42,7 @@
     --space-2: 0.5rem;
     --space-3: 0.75rem;
     --space-4: 1rem;
+    --space-5: 1.25rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
     --space-10: 2.5rem;
@@ -1984,15 +1985,35 @@ body {
     .welcome-layout {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: var(--space-8);
+        gap: var(--space-6);
     }
 
     .welcome-left {
         align-items: center;
+        text-align: center;
     }
 
     .welcome-right {
         order: -1;
+    }
+
+    .welcome-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .quiz-info {
+        justify-content: center;
+    }
+
+    .btn-primary {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .coach-name {
+        text-align: center;
+        width: 100%;
     }
 
     .score-section {
@@ -2062,7 +2083,12 @@ body {
 
     .welcome-description {
         max-width: 100%;
+        text-align: center;
         line-height: 1.7;
+    }
+
+    .btn-primary {
+        width: 100%;
     }
 
     .quiz-info {
@@ -2374,16 +2400,16 @@ body {
     .reset-section,
     .root-section,
     .leaks-section {
-        padding: var(--space-4);
+        padding: var(--space-5);
     }
 
     .snapshot-section,
     .dimension-card {
-        padding: var(--space-4);
+        padding: var(--space-5);
     }
 
     .score-section {
-        padding: var(--space-4);
+        padding: var(--space-5);
     }
 
     .pattern-narrative {
@@ -2434,13 +2460,14 @@ body {
     }
 
     .oto-section {
-        padding: var(--space-4);
+        padding: var(--space-5);
     }
 
     .oto-cta {
         padding: var(--space-3) var(--space-4);
         font-size: var(--text-sm);
         white-space: normal;
+        width: 100%;
     }
 
     .oto-subtitle {
@@ -2459,7 +2486,7 @@ body {
     .note-from-ritu {
         flex-direction: column;
         text-align: center;
-        padding: var(--space-4);
+        padding: var(--space-5);
     }
 
     .ritu-avatar {
