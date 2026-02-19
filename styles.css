@@ -273,10 +273,11 @@ body {
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: var(--space-3);
     line-height: 1.15;
     width: 100%;
+    white-space: nowrap;
 }
 
 .gradient-text {
