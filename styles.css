@@ -1386,13 +1386,13 @@ body {
     background: hsl(330, 60%, 60%);
 }
 
-.status-banner.status-wobbly {
+.status-banner.status-transitioning {
     background: linear-gradient(135deg, hsla(45, 70%, 50%, 0.08), hsla(35, 70%, 45%, 0.08));
     border: 1px solid hsla(45, 70%, 55%, 0.3);
     color: hsl(45, 60%, 38%);
 }
 
-.status-banner.status-wobbly .status-dot {
+.status-banner.status-transitioning .status-dot {
     background: hsl(45, 80%, 55%);
 }
 
@@ -1560,7 +1560,7 @@ body {
     border: 1px solid hsla(330, 60%, 50%, 0.25);
 }
 
-.tag-wobbly {
+.tag-transitioning {
     background: hsla(280, 50%, 50%, 0.08);
     color: hsl(280, 45%, 42%);
     border: 1px solid hsla(280, 50%, 50%, 0.25);

@@ -337,7 +337,7 @@ function renderResults() {
     // Helper to determine status level
     const getStatusLevel = (score) => {
         if (score <= 40) return { label: 'Depleted', class: 'depleted' };
-        if (score <= 70) return { label: 'Wobbly', class: 'wobbly' };
+        if (score <= 70) return { label: 'Transitioning', class: 'transitioning' };
         return { label: 'Flowing', class: 'flowing' };
     };
 
@@ -373,8 +373,8 @@ function renderResults() {
             </div>
             <h1 class="blueprint-title">Energy Report for ${results.userName}</h1>
             <p class="blueprint-subtitle">
-                You're not broken or behind. This is a compassionate mirror of where your body, mind, 
-                emotions and spirit have slipped into survival mode — and how to gently move back into creation.
+                You are neither broken nor behind. This report is a thoughtful reflection of where your body, mind, 
+                emotions, and spirit may have shifted into survival mode — and a clear path to restore balance and vitality.
             </p>
         </div>
         
@@ -395,7 +395,7 @@ function renderResults() {
                 <div class="score-number">${results.eas}</div>
                 <div class="score-legend">
                     <span><strong>0–40:</strong> Depleted</span>
-                    <span><strong>41–70:</strong> Wobbly</span>
+                    <span><strong>41–70:</strong> Transitioning</span>
                     <span><strong>71–100:</strong> Flowing</span>
                 </div>
                 <p class="archetype-intro">${results.userName}, you are currently in the</p>
@@ -415,7 +415,7 @@ function renderResults() {
         <!-- Quick Snapshot -->
         <div class="snapshot-section">
             <h3 class="snapshot-title">Quick Snapshot</h3>
-            <p class="snapshot-subtitle">Here's how your inner world is functioning behind everything you do.</p>
+            <p class="snapshot-subtitle">A closer look at how your internal energy systems are functioning beneath the surface.</p>
             <div class="snapshot-tags">
                 <span class="snapshot-tag tag-${getStatusLevel(results.indices.BMH).class}">
                     Body–Mind: ${getStatusLevel(results.indices.BMH).label}
@@ -450,7 +450,7 @@ function renderResults() {
                     ${dimensionScores.map(d => renderDimensionBar(d.name, d.score)).join('')}
                 </div>
                 <p class="strongest-note">
-                    Your strongest area is <strong>${strongest.name}</strong>. Keep feeding this — it's the energy that will help you repair the other dimensions.
+                    Your strongest area is <strong>${strongest.name}</strong>. Continue nurturing this strength — it serves as the foundation that will support healing across other dimensions.
                 </p>
             </div>
         </div>
@@ -458,8 +458,8 @@ function renderResults() {
         <!-- Leaks Section -->
         <div class="leaks-section">
             <p class="leaks-text">
-                Your biggest leaks right now are <strong>${weakest[0].name}</strong> and <strong>${weakest[1].name}</strong>. 
-                These are the areas to give extra love this week.
+                The areas requiring your most immediate attention are <strong>${weakest[0].name}</strong> and <strong>${weakest[1].name}</strong>. 
+                These are where focused care and intention will yield the most meaningful results.
             </p>
         </div>
         
@@ -492,8 +492,8 @@ function renderResults() {
             </div>
             <h3 class="reset-title">7-Day Nervous System Reset</h3>
             <p class="reset-subtitle">
-                Your 7-day reset is about turning what you know into what you do consistently. 
-                Small, repeatable practices that your system can rely on, even when life gets messy.
+                This structured 7-day programme is designed to help you translate awareness into consistent action — 
+                gentle, repeatable practices your system can rely upon, even during life's most demanding moments.
             </p>
             <div class="reset-days">
                 ${resetPlan.map((day, i) => `
@@ -512,9 +512,9 @@ function renderResults() {
         <div class="note-from-ritu">
             <div class="ritu-avatar">R</div>
             <div class="ritu-content">
-                <span class="ritu-label">A Note from Ritu</span>
+                <span class="ritu-label">A Personal Note from Ritu</span>
                 <p class="ritu-message">
-                    I know what it feels like to be the strong one for everyone and still feel like you're quietly falling apart inside. This report is not here to judge you — it's here to show you where your energy is asking for softness, boundaries and support. Take one tiny step from this report today, and your future self will already start breathing easier.
+                    I understand what it means to carry the weight of being the dependable one — while quietly struggling within. This report is not a judgement; it is a compassionate guide showing you precisely where your energy is calling for gentleness, firmer boundaries, and genuine support. Take even one meaningful step from this report today, and you will already be on the path to a more balanced, fulfilling life.
                 </p>
                 <p class="ritu-signature">With love, Ritu</p>
             </div>
@@ -522,7 +522,7 @@ function renderResults() {
         
         <!-- Disclaimer -->
         <p class="report-disclaimer">
-            This report is not a medical diagnosis. It's a mirror showing where your energy is asking for gentler, deeper support.
+            This report is not a medical diagnosis. It is a reflective assessment designed to illuminate where your energy may benefit from thoughtful, sustained support.
         </p>
         
         <!-- OTO Section -->
@@ -598,11 +598,11 @@ function renderResults() {
 // Helper functions for report generation
 function getStatusMessage(eas) {
     if (eas <= 40) {
-        return "YOUR SYSTEM NEEDS DEEP REST. SMALL, GENTLE STEPS ARE YOUR BEST MEDICINE RIGHT NOW.";
+        return "YOUR SYSTEM IS CALLING FOR DEEP RESTORATION. GENTLE, CONSISTENT STEPS ARE THE MOST EFFECTIVE PATH FORWARD.";
     } else if (eas <= 70) {
-        return "YOUR SYSTEM IS IN TRANSITION. SMALL, CONSISTENT SHIFTS OVER THE NEXT FEW WEEKS WILL CHANGE EVERYTHING.";
+        return "YOUR SYSTEM IS IN A MEANINGFUL TRANSITION. STEADY, INTENTIONAL ADJUSTMENTS WILL CREATE LASTING POSITIVE CHANGE.";
     } else {
-        return "YOUR SYSTEM IS FLOWING. KEEP NURTURING THESE PATTERNS AND WATCH YOUR ENERGY EXPAND.";
+        return "YOUR SYSTEM IS IN A STATE OF FLOW. CONTINUE NURTURING THESE PATTERNS TO SUSTAIN AND DEEPEN YOUR ALIGNMENT.";
     }
 }
 
@@ -637,44 +637,44 @@ function renderDimensionBar(name, score) {
 function generateCorePattern(results, weakest, strongest) {
     const patterns = {
         'The Resting Phase': {
-            narrative: `You've been the <span class="highlight">strong one for everyone</span> for so long that your own body and emotions are now quietly collapsing behind the scenes.`,
+            narrative: `You have been the <span class="highlight">pillar of strength for those around you</span> for so long that your own body and emotions have been quietly bearing the cost.`,
             behaviors: [
-                'You instinctively say "yes, I\'ll manage" even when your body is screaming for rest.',
-                'Guilt appears quickly when you think of spending time, money or attention on yourself.',
-                'Your sleep, energy levels or health feel unpredictable, which makes it hard to trust your own body.',
-                'You\'re learning to receive with more ease, but when things grow, fear of losing it can switch on.'
+                'You instinctively take on more than you can manage, even when your body is signalling the need for rest.',
+                'A sense of guilt arises when you consider investing time, resources, or attention in yourself.',
+                'Your sleep quality, energy levels, or overall health feel inconsistent, making it difficult to rely on your own body.',
+                'You are learning to receive more openly, yet when good things begin to grow, an underlying fear of loss can surface.'
             ],
-            rootCause: `At the root, your system still believes safety comes from controlling everything and everyone. Until this shifts, your energy will keep dropping when life gets intense.`
+            rootCause: `At its core, your system still operates on the belief that safety depends on maintaining control over everything. Until this pattern shifts, your energy reserves will continue to deplete under pressure.`
         },
         'The Awakening Phase': {
-            narrative: `You're becoming <span class="highlight">aware of your patterns</span> but the old survival mechanisms still run the show when stress hits.`,
+            narrative: `You are becoming <span class="highlight">increasingly aware of your patterns</span>, yet the deeply ingrained survival mechanisms still take over during moments of stress.`,
             behaviors: [
-                'You know what you should do for self-care, but struggle to follow through consistently.',
-                'Moments of clarity alternate with falling back into old habits.',
-                'You catch yourself people-pleasing, then feel frustrated for doing it again.',
-                'Progress feels like two steps forward, one step back — but you\'re still moving.'
+                'You understand what self-care requires, yet find it challenging to maintain consistency.',
+                'Periods of clarity are interspersed with a return to familiar, less supportive habits.',
+                'You recognise people-pleasing tendencies in yourself, and feel frustrated when they resurface.',
+                'Progress can feel uneven — but each step forward, however small, is building genuine momentum.'
             ],
-            rootCause: `Your nervous system is rewiring, but it needs consistent practice to trust that it's safe to change. The wobbly feeling is actually a sign of growth.`
+            rootCause: `Your nervous system is in the process of rewiring, and it requires consistent, patient practice to establish trust in change. The sense of instability you feel is, in fact, a natural indicator of meaningful growth.`
         },
         'The Rising Phase': {
-            narrative: `You've done significant work and your <span class="highlight">energy is building momentum</span>. The foundation is solid — now it's about refinement.`,
+            narrative: `You have invested significant effort in your personal development, and your <span class="highlight">energy is steadily building momentum</span>. The foundation is sound — the focus now is on refinement and deepening.`,
             behaviors: [
-                'You have boundaries, but sometimes struggle to maintain them under pressure.',
-                'Self-care routines exist, but life occasionally derails them.',
-                'You\'re more selective about where you give energy, but guilt still whispers.',
-                'Big manifestations feel possible — you just need to fully trust the process.'
+                'You have established boundaries, though maintaining them under pressure can still be a challenge.',
+                'Self-care practices are in place, yet life\'s demands occasionally interrupt your routine.',
+                'You are increasingly discerning about where you direct your energy, though guilt may still arise at times.',
+                'Meaningful transformation feels within reach — the next step is deepening your trust in the process.'
             ],
-            rootCause: `Your system is learning to hold more light, but old fear patterns occasionally resurface. Keep reinforcing the new neural pathways.`
+            rootCause: `Your system is learning to sustain a higher level of vitality, though older patterns of fear may occasionally re-emerge. Continue reinforcing the new, healthier neural pathways you have been cultivating.`
         },
         'The Radiant Phase': {
-            narrative: `You've cultivated <span class="highlight">beautiful alignment</span> and your energy naturally attracts what you desire. Now it's about maintenance and expansion.`,
+            narrative: `You have cultivated a state of <span class="highlight">deep, authentic alignment</span>, and your energy naturally draws in what you desire. The focus now is on sustaining and expanding this harmony.`,
             behaviors: [
-                'Self-care is non-negotiable and feels natural, not forced.',
-                'You give from overflow rather than depletion.',
-                'Boundaries are clear and held with ease.',
-                'You\'re ready to help others rise while maintaining your own vibration.'
+                'Self-care has become an integral, non-negotiable part of your daily life.',
+                'You give generously from a place of abundance rather than depletion.',
+                'Your boundaries are clearly defined and upheld with grace and confidence.',
+                'You are positioned to guide and uplift others while preserving your own well-being.'
             ],
-            rootCause: `Your system has learned to operate from creation rather than survival. Focus on deepening this state and sharing your light.`
+            rootCause: `Your system has successfully transitioned from survival mode to a creative, generative state. The path ahead is about deepening this alignment and sharing your wisdom with those around you.`
         }
     };
 
